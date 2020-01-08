@@ -23,5 +23,5 @@ pip install ansible
 
 mkdir -p /bootstrap/minecraft-server/ansible/roles
 
-ansible-galaxy role install nolte.minecraft -p /bootstrap/minecraft-server/ansible/roles
+ansible-galaxy role install nolte.minecraft
 ansible-playbook -v -c local /bootstrap/minecraft-server/ansible/minecraft-server-playbook.yml
