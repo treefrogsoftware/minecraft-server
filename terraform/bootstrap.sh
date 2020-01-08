@@ -9,16 +9,14 @@ mkdir /bootstrap
 if [[ ${ID_LIKE} == "debian" ]]
 then
     apt-get update
-    apt-get install -y python-virtualenv git
+    apt-get install -y python-pip git
 else
     yum update
-    yum install -y python-virtualenv git
+    yum install -y python-pip git
 fi
 
 git clone ${REPO_LOCATION} /bootstrap/minecraft-server
-virtualenv --python /usr/bin/python /bootstrap/minecraft-server/venv
-source /bootstrap/minecraft-server/venv/bin/activate
-pip install ansible
+pip install ansible python-apt
 
 ansible-galaxy role install nolte.minecraft
 ansible-playbook -v -c local /bootstrap/minecraft-server/ansible/minecraft-server-playbook.yml
