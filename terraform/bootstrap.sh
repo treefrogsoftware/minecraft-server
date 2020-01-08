@@ -17,8 +17,6 @@ fi
 
 git clone ${REPO_LOCATION} /bootstrap/minecraft-server
 pip3 install ansible
-
 export mc_accept_eula=true
-
 ansible-galaxy role install nolte.minecraft
 ansible-playbook -v -c local /bootstrap/minecraft-server/ansible/minecraft-server-playbook.yml
