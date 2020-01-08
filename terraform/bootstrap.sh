@@ -9,14 +9,16 @@ mkdir /bootstrap
 if [[ ${ID_LIKE} == "debian" ]]
 then
     apt-get update
-    apt-get install -y python-pip git
+    apt-get install -y python3-pip python3-distutils-extra git
 else
     yum update
-    yum install -y python-pip git
+    yum install -y python3-pip python3-distutils-extra git
 fi
 
 git clone ${REPO_LOCATION} /bootstrap/minecraft-server
-pip install ansible python-apt
+pip3 install ansible
+
+export mc_accept_eula=true
 
 ansible-galaxy role install nolte.minecraft
 ansible-playbook -v -c local /bootstrap/minecraft-server/ansible/minecraft-server-playbook.yml
