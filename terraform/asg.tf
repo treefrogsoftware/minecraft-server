@@ -51,6 +51,7 @@ resource "aws_autoscaling_group" "minecraft_asg" {
 resource "aws_launch_configuration" "minecraft_asg_launch_config" {
   iam_instance_profile        = aws_iam_instance_profile.minecraft_server_instance_profile.name
   associate_public_ip_address = true
+  enable_monitoring           = false
   security_groups             = [aws_security_group.minecraft_sg.id]
   image_id                    = var.ami_id
   instance_type               = var.ec2_instance_type
