@@ -1,9 +1,11 @@
 ---
 - hosts: localhost
+  vars:
+    minecraft_eula_accept: true
+    minecraft_max_memory: "{{ ansible_facts.ansible_memory_mb.real.total * 0.8 }}"
+    minecraft_initial_memory: "{{ ansible_facts.ansible_memory_mb.real.total * 0.8 }}"
+    minecraft_ops: ["w3s7y"]
   tasks:
-  - name: Print hello world
-    debug:
-      msg: "Hello World!"
   - name: Install MC
     import_role:
       name: nolte.minecraft
