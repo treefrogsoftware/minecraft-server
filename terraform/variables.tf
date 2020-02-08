@@ -7,7 +7,7 @@ variable "minecraft_vpc_cidr" {
 variable "ec2_instance_type" {
   description = "The size of EC2 instance to put in the launch template"
   type        = string
-  default     = "t2.medium"
+  default     = "t3.medium"
 }
 
 variable "ami_id" {
