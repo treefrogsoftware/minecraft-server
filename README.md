@@ -9,6 +9,7 @@ Super quick and dirt block server spinner.
 * Check the variables are for an image you like... The ubuntu 18.04 AMI is in there as std.
 * Generate an SSH key for the server: `ssh-keygen -t rsa -b 4096 -f ~/.ssh/minecraft`
 * Create a state bucket for terraform in S3 (and alter the name as required in `provider.tf`)
+* Update `minecraft-server/ansible/minecraft-server-playbook.yml` with op names etc.
 * Run a plan
 ```
 cd terraform
