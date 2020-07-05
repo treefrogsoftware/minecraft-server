@@ -1,0 +1,134 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "server command to",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "machine",
+          "slots": [
+            {
+              "name": "status",
+              "type": "status"
+            },
+            {
+              "name": "server",
+              "type": "server"
+            }
+          ],
+          "samples": [
+            "{status}  {server} "
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "status",
+          "values": [
+            {
+              "name": {
+                "value": "start",
+                "synonyms": [
+                  "begin"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "stop",
+                "synonyms": [
+                  "halt"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "server",
+          "values": [
+            {
+              "name": {
+                "value": "minecraft",
+                "synonyms": [
+                  "myworld",
+                  "Minecraft",
+                  "game"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "worker"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "machine",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "status",
+              "type": "status",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1496468665889.240778439523"
+              }
+            },
+            {
+              "name": "server",
+              "type": "server",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1496468665889.1000769577119"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1496468665889.240778439523",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "stop or start"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1496468665889.1000769577119",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "worker or minecraft"
+          }
+        ]
+      }
+    ]
+  }
+}
