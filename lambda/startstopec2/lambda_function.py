@@ -10,6 +10,19 @@ ec2 = boto3.client('ec2', region_name=region)
 
 # --------------- Helpers that build all of the responses ----------------------
 
+
+def get_instance_information(intent, session):
+    session_attributes = {}
+    should_end_session = True
+    reprompt_text = 'Summary'
+    response = ec2.describe_instances()
+    speech_output = ' '
+    for instance in response['Reservations']:
+        speech_output = speech_output + instance['Instances'][0]['Tags'][0]['Value'] + ' is ' + instance['Instances'][0]['State']['Name'] + ' '
+    return build_response(session_attributes, build_speechlet_response(
+        intent['name'], speech_output, reprompt_text, should_end_session))
+
+
 def build_speechlet_response(title, output, reprompt_text, should_end_session):
     return {
         'outputSpeech': {
@@ -119,6 +132,8 @@ def on_intent(intent_request, session):
     # Dispatch to your skill's intent handlers
     if intent_name == "machine":
         return switch_ec2_start_stop(intent, session)
+    if intent_name == "summary":
+        return get_instance_information(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
     elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
