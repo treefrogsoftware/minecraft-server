@@ -31,5 +31,6 @@ variable "public_key" {
 variable "ssh_ips" {
   description = "IP addresses to allow port 22 inbound from (must be supplied via commandline)."
   type        = list
+  default     = ["86.19.230.107/32"]
 }
 

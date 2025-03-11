@@ -1,0 +1,24 @@
+[1m  # data.aws_subnet_ids.minecraft_subnet_ids[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[1m  # aws_autoscaling_group.minecraft_asg[0m will be created[0m[0m
+[1m  # aws_iam_instance_profile.minecraft_server_instance_profile[0m will be created[0m[0m
+[1m  # aws_iam_policy.minecraft_server_policy[0m will be created[0m[0m
+[1m  # aws_iam_role.minecraft_server_role[0m will be created[0m[0m
+[1m  # aws_iam_role_policy_attachment.minecraft_rp_attachment[0m will be created[0m[0m
+[1m  # aws_internet_gateway.minecraft_igw[0m will be created[0m[0m
+[1m  # aws_key_pair.minecraft_key[0m will be created[0m[0m
+[1m  # aws_launch_configuration.minecraft_asg_launch_config[0m will be created[0m[0m
+[1m  # aws_route_table.minecraft_route_table[0m will be created[0m[0m
+[1m  # aws_route_table_association.minecraft_server_associations[0][0m will be created[0m[0m
+[1m  # aws_route_table_association.minecraft_server_associations[1][0m will be created[0m[0m
+[1m  # aws_route_table_association.minecraft_server_associations[2][0m will be created[0m[0m
+[1m  # aws_s3_bucket.minecraft_backup_bucket[0m will be created[0m[0m
+[1m  # aws_s3_bucket_policy.only_allow_access_from_minecraft_vpc[0m will be created[0m[0m
+[1m  # aws_security_group.minecraft_sg[0m will be created[0m[0m
+[1m  # aws_security_group_rule.allow_22_from_defined_ips[0m will be created[0m[0m
+[1m  # aws_security_group_rule.allow_25565_inbound_from_all[0m will be created[0m[0m
+[1m  # aws_security_group_rule.allow_all_outbound[0m will be created[0m[0m
+[1m  # aws_subnet.minecraft_subnets[0][0m will be created[0m[0m
+[1m  # aws_subnet.minecraft_subnets[1][0m will be created[0m[0m
+[1m  # aws_subnet.minecraft_subnets[2][0m will be created[0m[0m
+[1m  # aws_vpc.minecraft_vpc[0m will be created[0m[0m

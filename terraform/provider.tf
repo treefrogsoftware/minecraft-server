@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     region = "eu-west-1"
-    bucket = "westys.net.tfstate"
+    bucket = "gages.net.tfstate"
     key    = "production/minecraft-server.tfstate"
   }
 }
